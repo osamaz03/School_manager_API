@@ -13,6 +13,7 @@ class Students(Base):
     __tablename__ = "students"
     id = Column(Integer , primary_key=True)
     name = Column(String)
+    email = Column(String)
 
     courses = relationship(
         "Course",
@@ -24,6 +25,7 @@ class Course(Base):
     __tablename__ = "courses"
     id = Column(Integer,primary_key=True)
     title = Column(String)
+    description = Column(String)
 
     students = relationship(
         "Students",
