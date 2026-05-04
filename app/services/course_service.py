@@ -31,7 +31,27 @@ def update_course(db : Session , course_id : int , data : CourseUpdate):
 
     return course
 
+def get_courses(db :Session):
+    courses = db.query(Course).all()
+
+    if not courses:
+        return None
+
+    return courses
+
 def get_course(db : Session , course_id : int):
     course = db.query(Course).filter(Course.id == course_id).first()
 
+    return course
+
+
+def delete_course(db : Session , course_id : int):
+    course = get_course(db , course_id)
+
+    if course:
+        db.delete(course)
+        db.commit()
+    else:
+        return None
+    
     return course
