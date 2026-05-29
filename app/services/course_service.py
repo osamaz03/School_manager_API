@@ -29,9 +29,12 @@ def update_course(db : Session , course_id : int , data : CourseUpdate):
     if data.description:
         course.description = data.description
 
+    db.commit()
+    db.refresh(course)
+
     return course
 
-def get_courses(db :Session):
+def all_courses(db :Session):
     courses = db.query(Course).all()
 
     if not courses:

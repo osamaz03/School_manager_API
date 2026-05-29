@@ -5,9 +5,10 @@ from app.database import Base
 enrollments = Table(
     "enrollments",
     Base.metadata,
-    Column("student_id",ForeignKey("student_id")),
-    Column("course_id",ForeignKey("course_id"))
+    Column("student_id", ForeignKey("students.id"), primary_key=True),
+    Column("course_id", ForeignKey("courses.id"), primary_key=True),
 )
+
 
 class Students(Base):
     __tablename__ = "students"

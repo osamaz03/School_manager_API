@@ -3,7 +3,7 @@ from app.schemas import EnrollmentCreate
 from sqlalchemy.orm import Session
 
 
-def enroll(db : Session , data : EnrollmentCreate):
+def enroll_student(db : Session , data : EnrollmentCreate):
 
     student = db.query(Students).filter(Students.id == data.student_id).first()
 
