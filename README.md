@@ -38,6 +38,7 @@ School_Manager_API/
 │   └── schemas.py
 ├── tests/
 │   └── test_school.py
+├── requirements.txt
 └── school.db
 ```
 
@@ -50,10 +51,10 @@ python -m venv venv
 .\venv\Scripts\activate
 ```
 
-2. Install the dependencies.
+2. Install the dependencies from `requirements.txt`.
 
 ```powershell
-pip install fastapi uvicorn sqlalchemy pydantic pytest
+pip install -r requirements.txt
 ```
 
 ## Run the API
@@ -144,5 +145,6 @@ The tests use an in-memory SQLite database, so they do not modify `school.db`.
 ## Notes
 
 - The project follows a simple layered structure using `routes`, `services`, `models`, and `schemas`.
+- Project dependencies are listed in [requirements.txt](<C:/Users/HP Gaming/Desktop/python projects/School_Manager_API/requirements.txt>).
 - SQLite is configured in [app/database.py](<C:/Users/HP Gaming/Desktop/python projects/School_Manager_API/app/database.py>), currently using `sqlite:///./school.db`.
 - SQLAlchemy logging is enabled with `echo=True`, so SQL queries are printed in the console while the app runs.
