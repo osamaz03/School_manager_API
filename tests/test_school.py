@@ -32,9 +32,9 @@ from app.services.enrollment_service import (
 )
 
 
-# =========================================
+
 # TEST DATABASE
-# =========================================
+
 
 @pytest.fixture
 def db():
@@ -58,9 +58,9 @@ def db():
         session.close()
 
 
-# =========================================
+
 # STUDENT TESTS
-# =========================================
+
 
 def test_create_student(db):
 
@@ -149,9 +149,9 @@ def test_delete_student(db):
     assert deleted_student is None
 
 
-# =========================================
+
 # COURSE TESTS
-# =========================================
+
 
 def test_create_course(db):
 
@@ -239,9 +239,9 @@ def test_delete_course(db):
     assert deleted_course is None
 
 
-# =========================================
+
 # ENROLLMENT TESTS
-# =========================================
+
 
 def test_enroll_student(db):
 
