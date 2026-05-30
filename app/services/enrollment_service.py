@@ -23,11 +23,17 @@ def get_students_for_course(db : Session , course_id : int):
 
     course = db.query(Course).filter(Course.id == course_id).first()
 
+    if not course:
+        return None
+
     return course.students
 
 
 def get_courses_for_student(db : Session, student_id : int):
     student = db.query(Students).filter(Students.id == student_id).first()
+
+    if not student:
+        return None
 
     return student.courses
 
